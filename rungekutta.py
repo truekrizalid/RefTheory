@@ -1,0 +1,10 @@
+def f(x,t):
+    return -1*x*t
+def delta1(x,t,dt):
+    return dt*f(x,t)
+def delta2(x,t,dt):
+    return dt*f(x+1/2*delta1(x,t,dt),t+1/2*dt)
+def delta3(x,t,dt):
+    return dt*f(x+1/2*delta2(x,t,dt),t+1/2*dt)
+def delta4(x,t,dt):
+    return dt*f(x+delta3(x,t,dt),t+dt)
